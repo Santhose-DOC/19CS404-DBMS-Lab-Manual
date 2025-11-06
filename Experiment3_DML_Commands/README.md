@@ -47,123 +47,189 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL statement to double the availability of the product with product_id 1.
+
+products table
+
+---------------
+product_id
+product_name
+category_id
+availability
 
 ```sql
--- Paste your SQL code below for Question 1
+update products set availability=availability*2 where product_id =1;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![alt text](image.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+ Update the total selling price to quantity sold multiplied by updated selling price per unit where product id is 10 in the sales table.
+
+SALES TABLE
+
+| Name              | Type             |
+|--------------------|------------------|
+| sale_id            | INT              |
+| sale_date          | DATE             |
+| product_id         | INT              |
+| quantity           | INT              |
+| sell_price         | DECIMAL(10,2)    |
+| total_sell_price   | DECIMAL(10,2)    |
+
 
 ```sql
--- Paste your SQL code below for Question 2
+update SALES set total_sell_price=quantity*sell_price where product_id=10
 ```
 
 **Output:**
 
-![Output2](output.png)
+![alt text](image-1.png)
 
 **Question 3**
 ---
+Update the 'Selling_Price' to add 10% extra margin for all products supplied by the supplier with id 6.
+
+PRODUCTS TABLE
+
 -- Paste Question 3 here
+| Name         | Type           |
+|---------------|----------------|
+| product_id    | INT            |
+| product_name  | VARCHAR(100)   |
+| category      | VARCHAR(50)    |
+| cost_price    | DECIMAL(10,2)  |
+| sell_price    | DECIMAL(10,2)  |
+| reorder_lvl   | INT            |
+| quantity      | INT            |
+| supplier_id   | INT            |
+
 
 ```sql
--- Paste your SQL code below for Question 3
+update PRODUCTS set sell_price=sell_price+sell_price*0.1 where supplier_id=6
 ```
 
 **Output:**
 
-![Output3](output.png)
-
+![alt text](image-2.png)
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL statement to change salary of employee to 8000 whose Employee ID is 105, if the existing salary is less than 5000.
+
+Employees table
+
+---------------
+employee_id
+first_name
+last_name
+email
+phone_number
+hire_date
+job_id
+salary
+commission_pct
+manager_id
+department_id
 
 ```sql
--- Paste your SQL code below for Question 4
+update Employees set salary=8000 where employee_id=105 and salary<5000;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![alt text](image-3.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to Delete customers from 'customer' table where 'AGENT_CODE' is either 'A003' or 'A008'.
+
+Sample table: Customer
 
 ```sql
--- Paste your SQL code below for Question 5
+delete from customer where AGENT_CODE='A003'  or  AGENT_CODE='A008';
 ```
 
 **Output:**
 
-![Output5](output.png)
+![alt text](image-4.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to Delete All Doctors with a NULL Specialization
 
+Sample table: Doctors
+attributes : doctor_id, first_name, last_name, specialization
 ```sql
--- Paste your SQL code below for Question 6
+delete from Doctors  where Specialization is NULL;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![alt text](image-5.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to Select all patients who were admitted during the year 2023.
+
+Table: Patients
 
 ```sql
--- Paste your SQL code below for Question 7
+select patient_id,first_name,admission_date from Patients where  admission_date Between "2023-01-01" and "2024-01-01"
 ```
 
 **Output:**
 
-![Output7](output.png)
+![alt text](image-6.png)
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL statement to Find all those customers with all information whose names are ending with the letter 'n'.
+
+customer table
 
 ```sql
--- Paste your SQL code below for Question 8
+select * from customer  where cust_name like "%n";
 ```
 
 **Output:**
 
-![Output8](output.png)
+![alt text](image-7.png)
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write a SQL query to assess the performance of value2 as 'Poor', 'Average', or 'Excellent' based on whether it is less than 30, between 30 and 70, or greater than 70 in the Calculations table
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT 
+    id,
+    value2,
+    CASE
+        WHEN value2 < 30 THEN 'Poor'
+        WHEN value2 > 70 THEN 'Excellent'
+        ELSE 'Average'
+    END AS performance
+FROM Calculations;
+
 ```
 
 **Output:**
 
-![Output9](output.png)
+![alt text](image-8.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL statement to show all the contact_name, address, city of all customers who are from 'Germany', 'Mexico' and 'Spain' countries.
 
 ```sql
--- Paste your SQL code below for Question 10
+select contactname, address, city  from customers  where Country in ('Germany','Mexico','Spain')
 ```
 
 **Output:**
 
-![Output10](output.png)
+![alt text](image-9.png)
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
