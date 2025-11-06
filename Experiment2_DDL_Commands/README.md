@@ -141,9 +141,10 @@ JoinDate DATE);
 ---
 Insert the below data into the Employee table, allowing the Department and Salary columns to take their default values.
 
-EmployeeID  Name         Position
-----------  -----------  ----------
-4           Emily White  Analyst
+| EmployeeID | Name         | Position |
+|-------------|--------------|-----------|
+| 4           | Emily White  | Analyst   |
+
 
 Note: The Department and Salary columns will use their default values
 ```sql
@@ -156,11 +157,11 @@ Insert into Employee (EmployeeID, Name, Position) values(4,"Emily White","Analys
 
 **Question 4**
 ---
-Insert the following students into the Student_details table:
-RollNo      Name        Gender      Subject     MARKS
-----------  ----------  ----------  ----------  ----------
-202            Ella King         F           Chemistry   87
-203            James Bond   M          Literature    78
+| RollNo | Name        | Gender | Subject     | Marks |
+|--------|--------------|--------|--------------|--------|
+| 202    | Ella King    | F      | Chemistry    | 87     |
+| 203    | James Bond   | M      | Literature   | 78     |
+
 
 ```sql
 Insert into Student_details values(202,"Ella King","F","Chemistry",87),
@@ -261,11 +262,12 @@ Write a SQL query to Add a new column named "discount" with the data type DECIMA
 
 Sample table: customer
 
- customer_id |   cust_name    |    city    | grade | salesman_id 
--------------+----------------+------------+-------+-------------
-        3002 | Nick Rimando   | New York   |   100 |        5001
-        3007 | Brad Davis     | New York   |   200 |        5001
-        3005 | Graham Zusi    | California |   200 |        5002
+| customer_id | cust_name     | city        | grade | salesman_id |
+|--------------|---------------|-------------|--------|--------------|
+| 3002         | Nick Rimando  | New York    | 100    | 5001         |
+| 3007         | Brad Davis    | New York    | 200    | 5001         |
+| 3005         | Graham Zusi   | California  | 200    | 5002         |
+
 
 ```sql
 Alter Table Customer Add discount DECIMAL(5,2);
