@@ -105,123 +105,175 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Insert all employees from Former_employees into Employee
+
+Table attributes are EmployeeID, Name, Department, Salary
 
 ```sql
--- Paste your SQL code below for Question 1
+Insert into Employee (EmployeeID,Name,Department,Salary) 
+Select EmployeeID,Name,Department,Salary 
+From Former_employees;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![alt text](image.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+Create a table named Members with the following columns:
+
++ MemberID as INTEGER
++ MemberName as TEXT
++ JoinDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 2
+Create table Members(MemberID INTEGER,
+MemberName TEXT,
+JoinDate DATE);
 ```
 
 **Output:**
 
-![Output2](output.png)
+![alt text](image-1.png)
 
 **Question 3**
 ---
--- Paste Question 3 here
+Insert the below data into the Employee table, allowing the Department and Salary columns to take their default values.
 
+EmployeeID  Name         Position
+----------  -----------  ----------
+4           Emily White  Analyst
+
+Note: The Department and Salary columns will use their default values
 ```sql
--- Paste your SQL code below for Question 3
+Insert into Employee (EmployeeID, Name, Position) values(4,"Emily White","Analyst"); 
 ```
 
 **Output:**
 
-![Output3](output.png)
+![alt text](image-3.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+Insert the following students into the Student_details table:
+RollNo      Name        Gender      Subject     MARKS
+----------  ----------  ----------  ----------  ----------
+202            Ella King         F           Chemistry   87
+203            James Bond   M          Literature    78
 
 ```sql
--- Paste your SQL code below for Question 4
+Insert into Student_details values(202,"Ella King","F","Chemistry",87),
+                                  (203,"James Bond","M","Literature",78); 
 ```
 
 **Output:**
 
-![Output4](output.png)
+![alt text](image-4.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+Create a table named Shipments with the following constraints:
+ShipmentID as INTEGER should be the primary key.
++ ShipmentDate as DATE.
++ SupplierID as INTEGER should be a foreign key referencing Suppliers SupplierID).
++ OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
--- Paste your SQL code below for Question 5
+Create table Shipments(
+ShipmentID INTEGER primary key,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+foreign key(OrderID) references Orders(OrderID),
+foreign key(SupplierID) references Suppliers(SupplierID));
 ```
 
 **Output:**
 
-![Output5](output.png)
+![alt text](image-2.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+Create a table named ProjectAssignments with the following constraints:
++ AssignmentID as INTEGER should be the primary key.
++ EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
++ ProjectID as INTEGER should be a foreign key referencing Projects(ProjectID).
++ AssignmentDate as DATE should be NOT NULL.
 
 ```sql
--- Paste your SQL code below for Question 6
+Create table ProjectAssignments(
+AssignmentID INTEGER primary key,
+EmployeeID INTEGER,
+ProjectID INTEGER,
+AssignmentDate DATE NOT NULL,
+foreign key(ProjectID) references Projects(ProjectID), 
+foreign key(EmployeeID) references Employees(EmployeeID));
 ```
 
 **Output:**
 
-![Output6](output.png)
+![alt text](image-5.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to add a column named Date_of_birth as Date in the Student_details table.
 
 ```sql
--- Paste your SQL code below for Question 7
+Alter table Student_details add Date_of_birth Date;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![alt text](image-6.png)
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write an SQL query to change the name of the column id to employee_id in the table employee.
 
 ```sql
--- Paste your SQL code below for Question 8
+Alter table employee rename id to employee_id;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![alt text](image-7.png)
 
 **Question 9**
 ---
--- Paste Question 9 here
+create a table named jobs including columns job_id, job_title, min_salary and max_salary, and make sure that, the default value for job_title is blank and min_salary is 8000 and max_salary is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns.
 
 ```sql
--- Paste your SQL code below for Question 9
+Create table jobs(
+job_id Int,
+job_title text,
+min_salary int Default 8000 Check(min_salary >7999),
+max_salary int Default Null); 
 ```
 
 **Output:**
 
-![Output9](output.png)
+![alt text](image-8.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL query to Add a new column named "discount" with the data type DECIMAL(5,2) to the "customer" table.
+
+Sample table: customer
+
+ customer_id |   cust_name    |    city    | grade | salesman_id 
+-------------+----------------+------------+-------+-------------
+        3002 | Nick Rimando   | New York   |   100 |        5001
+        3007 | Brad Davis     | New York   |   200 |        5001
+        3005 | Graham Zusi    | California |   200 |        5002
 
 ```sql
--- Paste your SQL code below for Question 10
+Alter Table Customer Add discount DECIMAL(5,2);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![alt text](image-9.png)
 
 
 ## RESULT
